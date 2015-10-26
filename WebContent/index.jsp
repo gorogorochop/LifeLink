@@ -14,6 +14,7 @@
    </style>
    
    <script type="text/javascript" src='./Nwagon/Nwagon.js'></script>
+   <script type="text/javascript" src="index.js"></script>
    <link rel='stylesheet' href='./Nwagon/Nwagon.css' type='text/css'>
    <link rel='stylesheet' href='index.css' type='text/css'>
 </head>
@@ -24,7 +25,7 @@
          <h2>텍스트 입력</h2>
       
          <div id="inputField">
-            <textarea id="inputSource"></textarea>
+            <textarea id="inputSource" onkeydown="resize(this)"></textarea>
             <a href="#">
                <span id="resultButton">결과분석</span>
             </a>

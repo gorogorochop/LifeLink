@@ -33,17 +33,17 @@ div {
 
 #inputSource {
 	box-sizing: border-box;
-	overflow: auto;
-	padding: 8px 8px 32px;
-	border: solid 1px black; margin : 0;
+	overflow: hidden;
+	padding: 12px;
+	border: 1px solid #777777;
 	outline: none;
 	white-space: pre-wrap;
 	width: 100%;
-	height: 112px;
-	padding-right: 20px;
+	min-height: 180px;
 	font-size: 24px;
 	font-family: arial, sans-serif;
 	margin: 0;
+	resize: none;
 }
 
 #resultButton {
