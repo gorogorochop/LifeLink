@@ -57,11 +57,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Life Link 관리자 페이지</title>
  <body>
-<<<<<<< HEAD
  <div id = "login">
  	<p>Input Password   
  	<textarea id="subject" rows="1" cols = "32" style="overflow:hidden; margin-bottom:4px;"></textarea>
- 	<button type="button" id="auth" class="btn btn-primary">����</button>
+ 	<button type="button" id="auth" class="btn btn-primary">인증</button>
  	</p>
  </div>
  <div id = "logout" class = "afterAuth">
@@ -73,14 +72,14 @@
 			<table width="100%" cellpadding="0" cellspacing="0" border="0" class="table table-hover">
 			  <tr height="5"><td width="5"></td></tr>
 			 <tr style="text-align:center;">
-			   <td width="73px">��ȣ</td>
-			   <td width="173px">����</td>
-			   <td width="679px">����</td>
+			   <td width="73px">번호</td>
+			   <td width="173px">제목</td>
+			   <td width="679px">내용</td>
 			 </tr>
 			 <tr>
 			 	<td style="margin: auto;">1</td>
-			 	<td>��վ� �װڴ�</td>
-			 	<td>��վ� �װڴٶ�� ������ �������� ǥ������ �м��Ǿ����</td>
+		 		<td>재밌어 죽겠다</td>
+		 		<td>재밌어 죽겠다라는 내용이 부정적인 표현으로 분석되었어요</td>
 			 </tr>
 			 <tr>
 			 	<td>2</td>
@@ -90,17 +89,17 @@
 			 <tr>
 			 	<td>3</td>
 			 	<td>33</td>
-			 	<td>���� ����</td>
+			 	<td>내용없음</td>
 			 </tr>
 			  <tr>
 			 	<td>4</td>
 			 	<td>44</td>
-			 	<td>���� ����</td>
+			 	<td>내용없음</td>
 			 </tr>
 			  <tr>
 			 	<td>5</td>
 			 	<td>55</td>
-			 	<td>���� ����</td>
+			 	<td>내용없음</td>
 			 </tr>
 			
 			 </table>
@@ -114,67 +113,13 @@
 	<div id="container" style="border:1px solid black;">
 	     <div id="inputArea">
 	        <div id="inputField">
-	        	<textarea id="subject" readonly="readonly" rows="1" cols = "32" style="overflow:hidden; margin-bottom:4px;">��վ� �װڴ�.</textarea><p>
-	           <textarea id="description" readonly="readonly" rows="5" cols = "30">��վ� �װڴٶ�� ������ �������� ǥ������ �м��Ǿ����</textarea><p>
-	           <button type="button" onclick="" class="btn btn-primary">����</button>
-	           <button type="button" onclick="" class="btn btn-primary">����</button>
+	        	<textarea id="subject" readonly="readonly" rows="1" cols = "32" style="overflow:hidden; margin-bottom:4px;">재밌어 죽겠다</textarea><p>
+	           <textarea id="description" readonly="readonly" rows="5" cols = "30">재밌어 죽겠다라는 내용이 부정적인 표현으로 분석되었어요</textarea><p>
+	           <button type="button" onclick="" class="btn btn-primary">수락</button>
+	           <button type="button" onclick="" class="btn btn-primary">거절</button>
 	        </div>
 	     </div>
 	</div>
-=======
- <div id ="board">
-	 <span>
-		<table width="100%" cellpadding="0" cellspacing="0" border="0" class="table table-hover">
-		  <tr height="5"><td width="5"></td></tr>
-		 <tr style="text-align:center;">
-		   <td width="73px">번호</td>
-		   <td width="173px">제목</td>
-		   <td width="679px">내용</td>
-		 </tr>
-		 <tr>
-		 	<td style="margin: auto;">1</td>
-		 	<td>재밌어 죽겠다</td>
-		 	<td>재밌어 죽겠다라는 내용이 부정적인 표현으로 분석되었어요</td>
-		 </tr>
-		 <tr>
-		 	<td>2</td>
-		 	<td>재미지다.</td>
-		 	<td>프로젝트 참 재미지다</td>
-		 </tr>
-		 <tr>
-		 	<td>3</td>
-		 	<td>재미지다.</td>
-		 	<td>프로젝트 참 재미지다</td>
-		 </tr>
-		  <tr>
-		 	<td>4</td>
-		 	<td>재미지다.</td>
-		 	<td>프로젝트 참 재미지다</td>
-		 </tr>
-		  <tr>
-		 	<td>5</td>
-		 	<td>재미지다.</td>
-		 	<td>프로젝트 참 재미지다</td>
-		 </tr>
-		
-		 </table>
-		 
-		<table width="100%" cellpadding="0" cellspacing="0" border="0">
-		  <tr><td colspan="4" height="5"></td></tr>
-	
-		</table>
-	</span>
-</div>	
-<div id="container" style="border:1px solid black;">
-     <div id="inputArea">
-        <div id="inputField">
-        	<textarea id="subject" readonly="readonly" rows="1" cols = "32" style="overflow:hidden; margin-bottom:4px;">재밌어 죽겠다.</textarea><p>
-           <textarea id="description" readonly="readonly" rows="5" cols = "30">재밌어 죽겠다라는 내용이 부정적인 표현으로 분석되었어요</textarea><p>
-           <button type="button" onclick="" class="btn btn-primary">수락</button>
-           <button type="button" onclick="" class="btn btn-primary">거절</button>
-        </div>
-     </div>
->>>>>>> refs/remotes/supermoony/master
 </div>
 </body>
 </html>
