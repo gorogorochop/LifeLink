@@ -2,25 +2,25 @@ package db;
 
 public class Report {
 	private int id;
-	   private String contents;
-	   private String opinion;
-	   
-	   public Report(int id, String contents, String opinion) {
-	      super();
-	      this.id = id;
-	      this.contents = contents;
-	      this.opinion = opinion;
-	   }
+	private String contents;
+	private String opinion;
 
-	   public int getId() {
-	      return id;
-	   }
+	public Report(int id, String contents, String opinion) {
+		super();
+		this.id = id;
+		this.contents = contents;
+		this.opinion = opinion;
+	}
 
-	   public String getContents() {
-	      return contents;
-	   }
+	public int getId() {
+		return id;
+	}
 
-	   public String getOpinion() {
-	      return opinion;
-	   }
+	public String getContents() {
+		return contents;
+	}
+
+	public String getOpinion() {
+		return opinion;
+	}
 }

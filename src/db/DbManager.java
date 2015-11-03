@@ -398,40 +398,40 @@ public class DbManager {
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setInt(1, wordId);
 			ps.execute();
-			
+
 			ps.close();
 			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	
-	  /**JUNE*******
-	    * Report table을 받아온다.
-	    * 
-	    * @param id = (int)report id
-	    * @param contents = (String)제목
-	    * @param opinion = (String)내용
-	    */
-	   public ArrayList<Report> queryAllReport() {
-	      ArrayList<Report> resultList = new ArrayList<>();
-	      try {
-	         Connection connection = getConnection();
-	         Statement statement = null;
-	         ResultSet resultSet = null;
 
-	         statement = connection.createStatement();
-	         resultSet = statement.executeQuery("select * from reported_list");
+	/**JUNE*******
+	 * Report table을 받아온다.
+	 * 
+	 * @param id = {@code integer} report id
+	 * @param contents = {@code String} 제목
+	 * @param opinion = {@code String} 내용
+	 */
+	public ArrayList<Report> queryAllReport() {
+		ArrayList<Report> resultList = new ArrayList<>();
+		try {
+			Connection connection = getConnection();
+			Statement statement = null;
+			ResultSet resultSet = null;
 
-	         while(resultSet.next()) {
-	            resultList.add(new Report(resultSet.getInt("id"), resultSet.getString("Contents"), resultSet.getString("Opinion")));
-	         }
-	         statement.close();
-	         resultSet.close();
-	         connection.close();
-	      } catch (SQLException e) {
-	         e.printStackTrace();
-	      }
-	      return resultList;
-	   }
+			statement = connection.createStatement();
+			resultSet = statement.executeQuery("select * from reported_list");
+
+			while(resultSet.next()) {
+				resultList.add(new Report(resultSet.getInt("id"), resultSet.getString("Contents"), resultSet.getString("Opinion")));
+			}
+			statement.close();
+			resultSet.close();
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return resultList;
+	}
 }

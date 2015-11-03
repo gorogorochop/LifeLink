@@ -16,16 +16,18 @@ import db.Report;
  */
 @WebServlet("/Manager")
 public class ManagerServlet extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
+
 	DbManager dbm = DbManager.getInstance();
 	ArrayList<Report> result = new ArrayList<>();
+
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
 	public ManagerServlet() {
 		super();
 	}
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
@@ -44,6 +46,5 @@ public class ManagerServlet extends HttpServlet {
 
 		}
 		out.println("</BODY></HTML>");
-
 	}
 }
