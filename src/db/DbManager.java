@@ -320,4 +320,29 @@ public class DbManager {
 		}
 		return result;
 	}
+	
+	/**
+	 * 특정 카테고리에 속하는 단어 리스트를 리턴
+	 * 
+	 * @param categoryId 리턴할 단어들의 카테고리 아이디 
+	 * @return {@code ArrayList<Word>} 단어 리스트
+	 */
+	public ArrayList<Word> queryWordList(int categoryId) {
+		Connection connection = getConnection(); 
+		ArrayList<Word> wordList = new ArrayList<>();
+		try {
+			String sql = "select * from word_list where category_id=?";
+			PreparedStatement ps;
+			ps = connection.prepareStatement(sql);
+			ps.setInt(1, categoryId);
+			ResultSet rs = ps.executeQuery();
+
+			while(rs.next())
+				wordList.add(new Word(rs.getString(2), rs.getInt(3)));
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return wordList;
+	}
 }
