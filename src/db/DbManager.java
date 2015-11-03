@@ -261,7 +261,51 @@ public class DbManager {
 			e.printStackTrace();
 		}
 	}
+	//*********************************************///
+	//---------------------------------------------------------------------------------//
+	/**
+	 * 단어를 추가한다.
+	 * 
+	 * @param word 추가할 단어
+	 * @param categoryId 이 단어가 속해있는 카테고리 이름
+	 */
+	public void insertWord(String word, String category) {
+		int categoryId = queryCategoryId(category);
+		insertWord(word, categoryId);
+	}
 
+	public ArrayList<Word> queryAllWord() {
+		Connection connection = getConnection();
+		ArrayList<Word> wordList = new ArrayList<>();
+		try {
+			String sql = "select * from word_list";
+			PreparedStatement ps;
+			ps = connection.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+
+			while(rs.next())
+				wordList.add(new Word(rs.getString(2), rs.getInt(3)));
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return wordList;
+	}//////////////////////////////////////////////
+	//-------------------------------------------------------------//
+	//*************************//
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/**
 	 * 단어를 추가한다.
 	 * 
