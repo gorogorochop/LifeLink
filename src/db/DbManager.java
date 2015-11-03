@@ -292,5 +292,27 @@ public class DbManager {
 		return wordList;
 	}
 	
-	public void modifyWord(int id, )
+	/**
+	 * 특정 카테고리에 속한 단어들 개수를 리턴
+	 * 
+	 * @param categoryId 단어가 몇개인지 알고싶은 카테고리의 아이디
+	 * @return 단어의 개수
+	 */
+	public int queryCountOfWordList(int categoryId) {
+		Connection connection = getConnection();
+		int result = -1;
+		String query = "select count(*) from word_list where category_id=?";
+		PreparedStatement ps;
+
+		try {
+			ps = connection.prepareStatement(query);
+			ps.setInt(1, categoryId);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next())
+				result = rs.getInt(1);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 }
