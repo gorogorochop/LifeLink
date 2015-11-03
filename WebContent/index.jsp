@@ -14,6 +14,7 @@
    </style>
    
    <script type="text/javascript" src='./Nwagon/Nwagon.js'></script>
+   <script type="text/javascript" src="index.js"></script>
    <link rel='stylesheet' href='./Nwagon/Nwagon.css' type='text/css'>
    <link rel='stylesheet' href='index.css' type='text/css'>
 </head>
@@ -24,7 +25,7 @@
          <h2>텍스트 입력</h2>
       
          <div id="inputField">
-            <textarea id="inputSource"></textarea>
+            <textarea id="inputSource" onkeyup="resize(this)"></textarea>
             <a href="#">
                <span id="resultButton">결과분석</span>
             </a>
@@ -33,6 +34,24 @@
       </div>
       <div id="resultArea">
          <h2>텍스트 분석 결과</h2>
+         
+         <div id="rtContainer">
+            <span id="resultText"><a href="#"><span class="feature">죽고싶다는</span></a> <a href="#">생각은</a> <a href="#">100번도</a> <a href="#">넘게</a> <a href="#">해봤습니다.</a> 
+<a href="#"><span class="feature">죽으면</span></a> <a href="#">끝날까</a>
+<a href="#"><span class="feature">죽으면</span></a> <a href="#">편해질까..</a>
+이대로 <span class="feature">죽기엔</span> 15년밖에 못 산 내 <span class="feature">인생이 너무 아깝지만</span> 
+계속 이렇게 <span class="feature">사는 것보단 나을 것</span> 같다 
+이대로라면.... 남은 8년이 정말 <span class="feature">자신이 없다</span> 
+만약에 이 <span class="feature">죽음에 성공하면</span> 뭐라고 하실거예요 
+반항심에 저지른 <span class="feature">충동적 자살?</span> 
+아니요.. 
+아주 오래 전부터 계획해온 일입니다. 
+<span class="feature">죽음을 결심</span>하는 사람들은 
+<span class="feature">삶에 아무런 낙이 없다</span>면서요 
+...지금 저도 그렇습니다 
+<span class="feature">살아갈 가치를 못느끼고</span> 있습니다</span>
+         </div>
+         
          <div id="chart8"></div>
          <script>
             var options = {
