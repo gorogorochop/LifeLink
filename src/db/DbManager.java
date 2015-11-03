@@ -273,6 +273,11 @@ public class DbManager {
 		insertWord(word, categoryId);
 	}
 
+	/**
+	 * {@link #TABLE_WORD_LIST} 테이블에서 모든 단어들을 리턴한다.
+	 * 
+	 * @return {@code ArrayList<Word>} All of the words in the word list table.
+	 */
 	public ArrayList<Word> queryAllWord() {
 		Connection connection = getConnection();
 		ArrayList<Word> wordList = new ArrayList<>();
