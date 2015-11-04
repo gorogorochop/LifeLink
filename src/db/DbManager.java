@@ -25,17 +25,17 @@ public class DbManager {
 	/**
 	 * 테스트하는 각자 로컬호스트의 데이터베이스 스키마 이름을 입력해야함. 
 	 */
-	private static final String databaseName = "lifelink";
+	private static String databaseName = "lifelink";
 
 	/**
 	 * mysql 로컬호스트 user name 입력해야함.
 	 */
-	private static final String user = "root";
+	private static String user = "root";
 
 	/**
 	 * mysql 로컬호스트 password 입력해야함.
 	 */
-	private static final String password = "moon";
+	private static String password = "moon";
 	////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////
 
@@ -53,8 +53,10 @@ public class DbManager {
 
 	@SuppressWarnings("unused")
 	private static final String TABLE_TRAINING_DATA = "training_data";
+	
+	private static final String jdbcUrl = "jdbc:mysql://localhost/";
 
-	private static final String url = "jdbc:mysql://localhost/" + databaseName;
+	private static String url = jdbcUrl + databaseName;
 
 	private static volatile DbManager instance; 
 
@@ -76,8 +78,38 @@ public class DbManager {
 		}
 		return instance;
 	}
+	
+	/**
+	 * DbManager 클래스를 사용하고 싶은데, 데이터베이스 이름, 아이디, 패스워드가 다른경우,
+	 * 임의로 설정하며 객체를 할당할 때 사용하는 메소드이다.
+	 * 
+	 * @param databaseName 본인의 데이터베이스 이름
+	 * @param user 데이터베이스 유저이름
+	 * @param password 데이터베이스 패스워드
+	 * @return DbManager instance
+	 * @see #getInstance()
+	 */
+	public static DbManager getInstance(String databaseName, String user, String password) {
+		if(!DbManager.databaseName.equals(databaseName) ||
+				!DbManager.user.equals(user) ||
+				!DbManager.password.equals(password)) {
+			synchronized (DbManager.class) {
+				instance = new DbManager(databaseName, user, password);
+			}
+			return instance;
+		} else {
+			return getInstance();
+		}
+	}
 
 	private DbManager() {
+	}
+	
+	private DbManager(String dbName, String un, String pw) {
+		databaseName = dbName;
+		user = un;
+		password = pw;
+		url = jdbcUrl + databaseName;
 	}
 
 	/**
