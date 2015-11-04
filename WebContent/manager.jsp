@@ -156,7 +156,7 @@
 				  <tr><td colspan="4" height="5"></td></tr>
 			
 				</table>
-		
+				<a href="Manager">DB 열람</a>
 		</div>	
 		<div id="container" style="border:1px solid black;">
 		     <div id="inputArea">
